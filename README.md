@@ -1,31 +1,48 @@
-This project explores the use of the Monte Carlo method to simulate stock price trajectories on the stock market.
+# Monte Carlo Simulation of Stock Prices with Historical and GARCH-based Volatility
 
-The analysis includes:
+This project investigates the use of Monte Carlo methods to simulate future stock price paths using two approaches:
 
-Downloading and analysis of historical data.
-Simulation of future prices with historical or random parameters.
-Visualization of simulated trajectories.
-Calculation of confidence intervals for future prices.
-Contents
-All explanations, analyses and results are available in the Jupyter notebook included in this repository.
+- A constant-volatility model based on Geometric Brownian Motion (GBM)
+- A time-varying volatility model using GJR-GARCH(1,1) with Student's t-distributed errors
 
-The notebook contains :
+## Objectives
 
-An explanation of key concepts.
-Fully documented Python code.
-Visualizations of simulation results.
-How to access the content?
-Download or clone this repository.
-Open the notebook file (<notebook_name>.ipynb) with Jupyter Notebook, JupyterLab or Google Colab.
+The notebook performs the following tasks:
 
-Installation
-Make sure you have installed the following libraries to run the notebook :
+- Downloads and processes historical stock data (AAPL)
+- Calculates log returns and fits a GJR-GARCH(1,1) model
+- Simulates future price trajectories using:
+  - Constant volatility (historical estimate)
+  - GJR-GARCH conditional volatility
+- Plots simulated paths along with historical prices
+- Computes 95% confidence intervals for forecasted prices
+- Estimates Value-at-Risk (VaR) at 95% and 99% confidence levels
 
-yfinance
-pandas
-numpy
-matplotlib
-scipy
+## Contents
+
+The Jupyter notebook includes:
+
+- Step-by-step explanations of the models and methodology
+- Python code to estimate and simulate each model
+- Graphical comparison of constant-volatility and GJR-GARCH simulations
+- Evaluation of model realism through path behavior and risk measures
+- Documentation of all functions and output interpretations
+
+## How to Use
+
+1. Clone or download this repository.
+2. Open the notebook `monte_carlo_with_volatility_models.ipynb` using:
+   - Jupyter Notebook
+   - JupyterLab
+   - Google Colab (if preferred)
+
+## Requirements
+
+To run the notebook, install the following Python packages:
+
+```bash
+pip install yfinance pandas numpy matplotlib seaborn statsmodels arch scipy
+
 You can install these dependencies with the command :
 
 bash
